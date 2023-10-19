@@ -8,6 +8,7 @@ const priceForKm = 0.21;
 let priceUser;
 let priceFinal;
 
+const resultSection = document.getElementById(".result-section");
 
 const sendBtn = document.getElementById("send");
 //console.log(sendBtn);
@@ -37,17 +38,38 @@ sendBtn.addEventListener("click", function () {
         priceFinal = priceFinal.toFixed(2)
         console.log(priceFinal);
     } 
-    else if (parseInt(userAge) >= 0 && parseInt(userAge) <18)
+    else
     {
         console.log("Minorenne");
         priceFinal = priceUser - ((priceUser / 100) * 20);
         priceFinal = priceFinal.toFixed(2)
         console.log(priceFinal);
     }
-    else
-    {
-        
-    }
 
+    const userNameOut = `${userName}`;
+    const userAgeOut = `${userAge}`;
+    const userKmOut = `${userKm}`;
+    const priceFinaleOut = `${priceFinal}`;
+
+    //Output dei dati
+    document.getElementById("name-card").innerHTML = userNameOut;
+    document.getElementById("age-card").innerHTML += (`${userAgeOut} anni`);
+    document.getElementById("km-card").innerHTML += (`${userKmOut}km`);
+    document.getElementById("price-card").innerHTML += (`${priceFinaleOut}€`);
+    console.log(userNameOut, userAgeOut, userKmOut, priceFinaleOut);
+
+    //resultSection.classList.remove("d-none");
     });
+
+document.getElementById("clear").addEventListener("click", function () {
+    userNameElem.value = "";
+    userKmElem.value = "";
+    userAgeElem.value = "";
+    document.getElementById("name-card").innerHTML = "";
+    document.getElementById("age-card").innerHTML = "Età del passeggero: ";
+    document.getElementById("km-card").innerHTML = "Distanza da percorrere: ";
+    document.getElementById("price-card").innerHTML = "Prezzo: ";
+    //resultSection.classList.add("d-none");
+})
+
 
