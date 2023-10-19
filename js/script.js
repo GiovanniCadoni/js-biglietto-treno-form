@@ -58,7 +58,7 @@ sendBtn.addEventListener("click", function () {
     document.getElementById("price-card").innerHTML += (`${priceFinaleOut}€`);
     console.log(userNameOut, userAgeOut, userKmOut, priceFinaleOut);
 
-    //resultSection.classList.remove("d-none");
+    //resultSection.classList.remove("hidden");
     });
 
 document.getElementById("clear").addEventListener("click", function () {
@@ -69,7 +69,7 @@ document.getElementById("clear").addEventListener("click", function () {
     document.getElementById("age-card").innerHTML = "Età del passeggero: ";
     document.getElementById("km-card").innerHTML = "Distanza da percorrere: ";
     document.getElementById("price-card").innerHTML = "Prezzo: ";
-    //resultSection.classList.add("d-none");
+    //resultSection.classList.add("hidden");
 })
 
 

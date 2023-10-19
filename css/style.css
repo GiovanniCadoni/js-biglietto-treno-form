@@ -4,6 +4,6 @@ body{
     background-color: deepskyblue;
 }
 
-.size{
-    width: 300px;
+.hidden{
+    display: none;
 }
